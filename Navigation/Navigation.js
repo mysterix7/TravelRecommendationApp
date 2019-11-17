@@ -31,24 +31,6 @@ export const startTravelScreen = () => {
         }})
       });
     }
-    export const pushh =() => {
-        Navigation.push('Article', {
-            component: {
-              id:'Article',  
-              name: 'Article',
-              passProps: {
-                text: 'Pushed screen'
-              },
-              options: {
-                topBar: {
-                  title: {
-                    text: 'Pushed screen title'
-                  }
-                }
-              }
-            }
-          });
-    }
     export const pushToScreenFullScreen = (componentId, screenName, titleName) => {
       
         Navigation.push(componentId, {
@@ -80,4 +62,43 @@ export const startTravelScreen = () => {
             }
           }
         }).then((msg) => {}).catch((err) => {})
+      }
+      export const pushToScreen = (componentId, screenName, titleName,topColor,backColor) => {
+      
+        Navigation.push(componentId, {
+          component: {
+            id: screenName,
+            name: screenName,
+            passProps: {
+              text: 'Pushed screen'
+            }
+            ,options: {
+              topBar: {
+                // hideOnScroll: true,
+                visible: true,
+                title: {
+                  text: titleName ? titleName : ' ',
+                  color: '#7892B8',
+                  fontSize:18,
+                  alignment:'center',
+                  fontFamily:'Gilroy-SemiBold'
+                },
+                background: {
+                  color: (topColor)?topColor:'#F3F7FD'
+                },
+                backButton:{
+                  color:(backColor)?backColor:'white',
+                  
+                },
+                elevation:0,
+                // height: ,
+                  // alpha:0,
+                drawBehind: false,
+              },
+              layout: {
+                orientation: ['portrait'] // An array of supported orientations
+              }
+            }
+          }
+        }).then((msg) => {}).catch((err) => {});
       }

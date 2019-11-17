@@ -16,7 +16,7 @@ import {
 import * as theme from'../../theme';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Octicons from 'react-native-vector-icons/Octicons';
-import {pushToScreenFullScreen,pushh} from '../../Navigation/Navigation'
+import {pushToScreenFullScreen,push,pushToScreen} from '../../Navigation/Navigation'
 
 const {height, width} = Dimensions.get('screen');
 
@@ -208,8 +208,7 @@ const destinations = [
           )
       }
       onPressRecommended = () =>{
-        pushToScreenFullScreen('TravelScreen','Article');
-        // pushh();
+        pushToScreen('TravelScreen','Article',null,null,'black')
       }
       renderRecommended = () =>{
         return(
