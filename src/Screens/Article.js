@@ -13,7 +13,7 @@ class Article extends React.Component{
     return (
       <View style={{flex:1,borderColor:'',borderWidth:0}}>
       <Text>
-          hey
+          Article Screen
       </Text>
       </View>
     )
